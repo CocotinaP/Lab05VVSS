@@ -1,0 +1,82 @@
+############################
+# Maven / Java
+############################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+############################
+# Serenity BDD
+############################
+serenity/
+serenity.properties
+serenity.conf
+site/
+*.json
+*.xml
+
+# Serenity reports
+target/site/
+target/serenity/
+target/serenity-reports/
+target/serenity-summary.html
+target/serenity-summary.json
+
+############################
+# IntelliJ IDEA
+############################
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+############################
+# Eclipse
+############################
+.project
+.classpath
+.settings/
+bin/
+
+############################
+# OS files
+############################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+############################
+# Temporary files
+############################
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+
+############################
+# Net2FTP test artifacts
+############################
+*.txt
+*.csv
+test-output/
