@@ -20,19 +20,16 @@ buildNumber.properties
 ############################
 # Serenity BDD
 ############################
-serenity/
-serenity.properties
-serenity.conf
-site/
-*.json
-*.xml
-
-# Serenity reports
+# Rapoarte Serenity (NU include pom.xml)
 target/site/
 target/serenity/
 target/serenity-reports/
 target/serenity-summary.html
 target/serenity-summary.json
+
+# Fișiere JSON generate de Serenity
+target/*.json
+target/serenity/*.json
 
 ############################
 # IntelliJ IDEA
@@ -75,8 +72,6 @@ Desktop.ini
 *.orig
 
 ############################
-# Net2FTP test artifacts
+# Test artifacts
 ############################
-*.txt
-*.csv
 test-output/
