@@ -31,4 +31,9 @@ public class RenameFilePage extends PageObject {
         backButton.click();
         waitABit(1000);
     }
+
+    public boolean rename_error_message_is_visible(String oldName) {
+        String bodyText = getDriver().findElement(By.tagName("body")).getText();
+        return bodyText.contains(oldName + " could not be renamed");
+    }
 }
