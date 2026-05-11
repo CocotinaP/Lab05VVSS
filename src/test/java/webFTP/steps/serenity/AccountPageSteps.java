@@ -97,4 +97,19 @@ public class AccountPageSteps {
         assertFalse("Fisierul NU ar trebui sa existe, dar exista!", exists);
     }
 
+    @Step
+    public void select_file(String filename) {
+        accountPage.select_file(filename);
+    }
+
+    @Step
+    public void rename_selected_file() {
+        accountPage.click_rename();
+    }
+
+    @Step
+    public void download_selected_file() {
+        accountPage.click_download();
+    }
+
 }

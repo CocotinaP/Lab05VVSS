@@ -34,6 +34,14 @@ public class DeleteDirectoryPageSteps {
     }
 
     @Step
+    public void delete_file(String filename) {
+        should_be_able_to_see_message("File " + filename);
+        delete_directory();
+        should_be_able_to_see_message("All the selected directories and files have been processed.");
+        back();
+    }
+
+    @Step
     public void should_be_able_to_see_message(String message) {
         assertThat(deleteDirectoryPage.getContent(), hasItem(containsString(message)));
     }

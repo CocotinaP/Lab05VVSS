@@ -103,7 +103,7 @@ public class AccountPage extends PageObject {
 
     // SELECTEAZĂ FIȘIERUL PENTRU ȘTERGERE
     public void check_file_to_delete(String filename) {
-        find(By.xpath("//input[@type='checkbox' and @value='" + filename + "']")).click();
+        select_file(filename);
     }
 
     // CLICK PE DELETE (funcționează pentru fișiere și directoare)
@@ -129,6 +129,19 @@ public class AccountPage extends PageObject {
         find(By.xpath("//tr[td/a[text()='" + filename + "']]//a[contains(text(),'Edit')]")).click();
     }
 
+    public void select_file(String filename) {
+        WebElement checkbox = find(By.xpath("//input[@type='checkbox' and @value='" + filename + "']"));
+        if (!checkbox.isSelected()) {
+            checkbox.click();
+        }
+    }
 
+    public void click_rename() {
+        click_element_by_attribute_value(buttonList, "value", "Rename");
+    }
+
+    public void click_download() {
+        click_element_by_attribute_value(buttonList, "value", "Download");
+    }
 
 }
