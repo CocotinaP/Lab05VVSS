@@ -91,6 +91,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <skip>false</skip>
+                    <argLine>-Xmx512m --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -103,7 +104,7 @@
                         <include>**/When*.java</include>
                         <include>**/*Story.java</include>
                     </includes>
-                    <argLine>-Xmx512m</argLine>
+                    <argLine>-Xmx512m --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED</argLine>
                     <systemPropertyVariables>
                         <webdriver.driver>${webdriver.driver}</webdriver.driver>
                     </systemPropertyVariables>

@@ -1,0 +1,56 @@
+============================================================
+  COMENZI UTILE - Lab05 VVSS - net2ftp Selenium Tests
+============================================================
+
+------------------------------------------------------------
+1. RULEAZA DOAR TESTUL DE SCENARIU
+------------------------------------------------------------
+mvn test -Dtest="FileManagementScenarioTest"
+
+------------------------------------------------------------
+2. RULEAZA TOATE TESTELE
+------------------------------------------------------------
+mvn test
+
+------------------------------------------------------------
+3. RULEAZA TOATE TESTELE DE LA ZERO (sterge rezultate vechi)
+------------------------------------------------------------
+mvn clean test
+
+------------------------------------------------------------
+4. GENEREAZA RAPORTUL SERENITY BDD
+------------------------------------------------------------
+MAVEN_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED" mvn serenity:aggregate
+
+------------------------------------------------------------
+5. DESCHIDE RAPORTUL IN BROWSER
+------------------------------------------------------------
+open target/site/serenity/index.html
+
+------------------------------------------------------------
+6. RULEAZA TOATE TESTELE + GENEREAZA RAPORT (tot intr-un pas)
+------------------------------------------------------------
+mvn clean test && MAVEN_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED" mvn serenity:aggregate
+
+------------------------------------------------------------
+7. RULEAZA UN SINGUR TEST DUPA NUMELE CLASEI
+------------------------------------------------------------
+mvn test -Dtest="NumeleClaseiTest"
+
+    Exemple:
+    mvn test -Dtest="LoginParameterizedTest"
+    mvn test -Dtest="CreateValidFileTest"
+    mvn test -Dtest="RenameValidFileTest"
+    mvn test -Dtest="DownloadValidFileTest"
+    mvn test -Dtest="CreateValidDirectoryTest"
+
+------------------------------------------------------------
+NOTE IMPORTANTE
+------------------------------------------------------------
+- Toate comenzile se ruleaza din folderul radacina al proiectului
+  (acolo unde se afla pom.xml)
+- Raportul se gaseste la: target/site/serenity/index.html
+- Java 17 este instalat - flag-urile --add-opens sunt obligatorii
+  pentru generarea raportului (comanda 4)
+- Chrome si chromedriver 148 sunt instalate si configurate
+============================================================

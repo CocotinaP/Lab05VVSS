@@ -33,7 +33,7 @@ public class CreateInvalidFileParamTest {
     private String content;
 
     @Test
-    public void edit_file_with_invalid_data() {
+    public void create_file_with_invalid_data() {
 
         driver.get("https://vvss:strugure@scs.ubbcluj.ro/vvta/net2ftp/index.php");
 
@@ -42,14 +42,11 @@ public class CreateInvalidFileParamTest {
 
         userLoggedIn.should_be_in_user_directory("/home/vvta1");
 
-        // Verificam ca fisierul nu exista
+        // Fisierul cu nume invalid nu exista pe server
         userLoggedIn.should_not_be_able_to_edit_file(name);
 
-        // Incercam sa il editam
-        userLoggedIn.edit_file(name);
-
-        // Verificam ca pagina de edit NU s-a deschis
-        assertFalse(driver.getPageSource().contains("Edit file"));
+        // Numele fisierului invalid nu apare nicaieri in lista
+        assertFalse(driver.getPageSource().contains(name));
 
         userLoggedIn.logout();
     }
